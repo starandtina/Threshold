@@ -1,0 +1,13 @@
+{
+  "box-sizing"                 : false,
+  "box-model"                  : false,
+  "display-property-grouping"  : false,
+  "star-property-hack"         : false,
+  "ids"                        : false,
+  "underscore-property-hack"   : false,
+  "compatible-vendor-prefixes" : false,
+  "adjoining-classes"          : false,
+  "gradients"                  : false,
+  "outline-none"               : false,
+  "fallback-colors"            : false
+}

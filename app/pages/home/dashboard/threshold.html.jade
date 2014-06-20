@@ -1,0 +1,50 @@
+form.row.clearfix(id="form-#{id}")
+  .cell.col-sm-2
+    select#at.form-control(name='at')
+      for t in thresholds.timeRange
+        if t == at
+          option(selected="selected", value="#{t}")= t
+        else
+          option(value="#{t}")= t
+  .cell.col-sm-2
+    select#util.form-control(name='util')
+      for t in thresholds.timeRange
+        if t == util
+          option(selected="selected", value="#{t}")= t
+        else
+          option(value="#{t}")= t
+  .cell.col-sm-4
+    .row
+      .col-sm-6
+        span.operator-text when the <b>ErrorSystem</b>
+      .col-sm-6.pl0
+        select#operator.form-control(name='operator')
+          each val, key in thresholds.operator
+            if key == operator
+              option(selected="selected", value="#{key}")= val
+            else
+              option(value="#{key}")= val
+  .cell.col-sm-3.alert-column
+    .row.show
+      .col-sm-5.pr0
+        input#warning.form-control.alert-input(type='text', name='warning', value="#{warning}")
+      .col-sm-7.pl0
+        label.trigger-text-container.trigger-warning-text
+          span.trigger-text trigger a warning
+          i.fa.fa-exclamation-triangle
+    .row
+      .col-sm-5.pr0
+        input#error.form-control.alert-input(type='text', name='error', value="#{error}")
+      .col-sm-7.pl0
+        label.trigger-text-container.trigger-error-text
+          span.trigger-text trigger a error
+          i.fa.fa-exclamation-triangle
+    .row
+      .col-sm-5.pr0
+        input#critical.form-control.alert-input(type='text', name='critical', value="#{critical}")
+      .col-sm-7.pl0
+        label.trigger-text-container.trigger-critical-text 
+          span.trigger-text trigger a critical
+          i.fa.fa-exclamation-triangle
+  .cell.col-sm-1
+    i.fa.fa-trash-o.fa-lg.delete.hide(title='Delete Threshold')

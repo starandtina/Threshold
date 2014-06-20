@@ -1,0 +1,54 @@
+/*
+  Base css override default browser styles
+*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background:#FFF;
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
+  background-color: #fff;
+  overflow-y: scroll;
+  margin: 0;
+}
+
+a {
+  color: #456BB1;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+select, input {
+  vertical-align: middle;
+}
+
+label input {
+  margin-right: 3px;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: normal;
+}
+
+button {
+  padding: 0;
+  border: none;
+  width: auto;
+  overflow: visible;
+}
