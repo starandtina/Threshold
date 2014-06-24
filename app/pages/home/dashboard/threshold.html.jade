@@ -1,4 +1,4 @@
-form.row.clearfix(id="form-#{id}")
+form.row.threshold-form.clearfix(id="form-#{id}")
   .cell.col-sm-2
     select#at.form-control(name='at')
       for t in thresholds.timeRange
@@ -7,9 +7,9 @@ form.row.clearfix(id="form-#{id}")
         else
           option(value="#{t}")= t
   .cell.col-sm-2
-    select#util.form-control(name='util')
+    select#until.form-control(name='until')
       for t in thresholds.timeRange
-        if t == util
+        if t == until
           option(selected="selected", value="#{t}")= t
         else
           option(value="#{t}")= t

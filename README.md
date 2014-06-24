@@ -1,4 +1,4 @@
-# Backbone + RequireJS + Mongodb Bootstrap
+# Threshold
 
 # Introduction
 
@@ -40,9 +40,6 @@ We could takes the screenshot comparison approach to testing CSS, and then compa
     npm start           // developement
     grunt serve:dist   // production
 
-## Mongodb
-
-    mongod --dbpath ~/test/mongodb
 
 # Build
 

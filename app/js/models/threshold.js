@@ -9,7 +9,7 @@ define([
   var Instance = Backbone.Model.extend({
     defaults: {
       at: null,
-      util: null,
+      until: null,
       operator: null,
       alert: null
     },
@@ -19,7 +19,7 @@ define([
       at: {
         required: true
       },
-      util: {
+      until: {
         required: true,
       },
       operator: {

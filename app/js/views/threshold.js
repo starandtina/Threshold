@@ -24,7 +24,7 @@ define([
       return bindings;
     },
     initialize: function () {
-      this.listenTo(this.model, 'change', this.render);
+      //this.listenTo(this.model, 'change', this.render);
       this.listenTo(this.model, 'change:at', this.changeAt);
       this.listenTo(this.model, 'destroy', this.remove);
     },
@@ -39,7 +39,7 @@ define([
       this.stickit();
 
       var colors = Tmpst.config.thresholds.colors;
-      this.$('form').addClass(colors[this.model.get('index') % colors.length]);
+      this.$('form').addClass('bl-' + colors[this.model.get('index') % colors.length]);
 
       return this;
     },
@@ -70,7 +70,7 @@ define([
       var target = event.target;
       var nodeName = target.nodeName.toUpperCase();
 
-      if (nodeName != 'SELECT' && nodeName != 'INPUT') {
+      if (nodeName !== 'SELECT' && nodeName !== 'INPUT') {
         this.$('#at').focus();
       }
 
@@ -81,13 +81,13 @@ define([
       });
     },
     onKeydown: function (e) {
-      if (e.keyCode == ESCAPE) {
+      if (e.keyCode === ESCAPE) {
         //reset
         this.render();
         this.removeFocus();
 
         return false;
-      } else if (e.keyCode == ENTER) {
+      } else if (e.keyCode === ENTER) {
         this.save();
         this.removeFocus();
 
@@ -95,7 +95,6 @@ define([
       }
     },
     save: function () {
-      debugger
       var attrs = {};
       _.each(this.$('form').serializeArray(), function (item) {
         attrs[item.name] = item.value;
@@ -105,7 +104,7 @@ define([
       this.$('.alert-column input').each(function (i, input) {
         var $input = $(input);
 
-        if ($input.val() == '') {
+        if ($input.val() === '') {
           $input.parents('.row').slideUp();
         }
       });

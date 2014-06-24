@@ -119,10 +119,10 @@ a.internal-home:hover {
 }
 
 .tmpst-footer .first-label {
-  font-size: 11.9px;
   margin: 10.5px 0;
   text-transform: uppercase;
   font-weight: 400;
+  font-size: 11.9px;
   line-height: 21px;
   text-rendering: optimizelegibility;
 }
@@ -153,7 +153,7 @@ a.internal-home:hover {
   margin-top: 11px;
   width: 108px;
   height: 17px;
-  background: url(2https://d2wvvaown1ul17.cloudfront.net/site-static/pages/home/template/logo.svg);
+  background: url();
   background-repeat: no-repeat;
   text-decoration: none;
 }
@@ -257,15 +257,10 @@ i {
   color: red;
 }
 
-
-.create-threshold {
-
-}
-
 /* Thresholds Container */
 .thresholds-container {
-  width: 100%;
   display: table;
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -285,15 +280,16 @@ i {
 }
 
 .thresholds-container .header-group .table-row .cell {
-  font-weight: bold;
-  vertical-align: bottom;
   border-bottom: 2px solid #DDD;
+  vertical-align: bottom;
+  font-weight: bold;
 }
 
 .thresholds-container .header-group .table-row .cell,
 .thresholds-container .row-group .table-row .cell {
-  line-height: 1.42857143;
+  border-top: 2px solid #DDD;
   vertical-align: top;
+  line-height: 1.42857143;
 }
 
 .thresholds-container .row-group {
@@ -302,11 +298,11 @@ i {
 
 .thresholds-container .row-group .table-row {
   cursor: pointer;
-  border-bottom: 2px solid transparent;
 }
 
 .thresholds-container .row-group .table-row .cell {
   float: none;
+  border-bottom: 2px solid transparent;
 }
 
 .thresholds-container .cell {
@@ -324,8 +320,8 @@ i {
 }
 
 .trigger-text-container {
-  width: 155px;
   padding: 7px;
+  width: 155px;
 }
 
 .trigger-text-container .fa-exclamation-triangle {
@@ -362,29 +358,29 @@ i {
 
 .thresholds-container select,
 .thresholds-container input {
-  border-color: transparent;
+  margin: 0 3px 0 3px;
   padding: 4px 3px 4px 0;
-  border-radius: 2px;
+  border-color: transparent;
   border-bottom: 1px dotted #AAA;
-  margin: 0 3px 0 3px;  
+  border-radius: 2px;  
   box-shadow: none;
-    
 }
 
 .thresholds-container input:focus, 
 .thresholds-container select:focus, textarea:focus {
-  border-bottom: transparent;
-  padding: 4px 3px;
   margin: 0;
+  padding: 4px 3px;
+  border-bottom: transparent;
 }
 
 .thresholds-container .row-group .edit-row {
-  background-color: RGB(218, 239, 246);
-  border-bottom: 2px solid RGB(86, 182, 217);  
+  background-color: RGB(218, 239, 246);  
 }
 
+.thresholds-container .header-group .edit-row .cell,
 .thresholds-container .row-group .edit-row .cell {
   border-top: 2px solid RGB(86, 182, 217);
+  border-bottom: 2px solid RGB(86, 182, 217);
 }
 
 .thresholds-container .row-group .edit-row input,
@@ -398,12 +394,15 @@ i {
 }
 
 .operator-text {
-  line-height: 34px;
   display: inline-block;
   margin: 0 auto;
   vertical-align: middle;
+  line-height: 34px;
 }
 
+.threshold-form {
+  margin-right: 0;
+}
 
 .bl-purple {
   border-left: 15px solid #5F2F69;
@@ -429,8 +428,11 @@ i {
   border-left: 15px solid #10B50C;
 }
 
-.bl-purple {
-  border-left: 15px solid #5F2F69;
+
+
+
+.bg-purple {
+  background-color: #5F2F69;
 }
 
 .bg-light-blue {
@@ -459,19 +461,32 @@ i {
   background-color: gray;
 }
 
-.thresholds-time-chart .row
-.thresholds-time-chart .row .col-md-1,
-.thresholds-time-chart .row .col-md-2,
-.thresholds-time-chart .row .col-md-6 {
-  margin: 0;
+.time-block {
+  position: relative;
+  height: 40px;
+}
+
+.thresholds-timechart {
+  position: relative;
+}
+
+.thresholds-timechart .row
+.thresholds-timechart .row .col-md-1,
+.thresholds-timechart .row .col-md-2,
+.thresholds-timechart .row .col-md-6,
+.thresholds-timechart .row .col-md-12 {
   padding: 0;
 }
 
-.thresholds-time-chart .time {
-  text-align: right;
-  padding-right: 2px;
+.thresholds-timechart .time {
   display: inline-block;
+  padding-right: 2px;
   height: 90px;
   border-right: 1px solid #CCC;
+  color: gray;
+  text-align: right;
 }
 
+.thresholds-timechart .row {
+  margin: 0;
+}
