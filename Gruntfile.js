@@ -151,17 +151,6 @@ module.exports = function (grunt) {
           ]
         }
       },
-      server: {
-        options: {
-          jshintrc: '<%= appConfig.server %>/.jshintrc'
-        },
-        files: {
-          src: [
-            '<%= appConfig.server %>/**/*.js',
-            '!<%= appConfig.server %>/node_modules/**/*.js'
-          ]
-        }
-      },
       test: {
         options: {
           jshintrc: 'test/.jshintrc'

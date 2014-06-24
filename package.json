@@ -1,5 +1,5 @@
 {
-  "name": "backbone-requirejs-mongodb-bootstrap",
+  "name": "threshold",
   "version": "1.0.0",
   "devDependencies": {
     "chai": "~1.7.2",
@@ -63,7 +63,7 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/starandtina/backbone-requirejs-mongodb-bootstrap.git"
+    "url": "https://github.com/starandtina/threshold.git"
   },
   "keywords": [
     "backbone",
@@ -76,7 +76,7 @@
   "author": "khalilz <kandmforever@126.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/starandtina/backbone-requirejs-mongodb-bootstrap/issues"
+    "url": "https://github.com/starandtina/threshold/issues"
   },
-  "homepage": "https://github.com/starandtina/backbone-requirejs-mongodb-bootstrap"
+  "homepage": "https://github.com/starandtina/threshold"
 }
