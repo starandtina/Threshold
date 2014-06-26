@@ -24,7 +24,6 @@ define([
       return bindings;
     },
     initialize: function () {
-      //this.listenTo(this.model, 'change', this.render);
       this.listenTo(this.model, 'change:at', this.changeAt);
       this.listenTo(this.model, 'destroy', this.remove);
     },
@@ -97,16 +96,12 @@ define([
     },
     save: function () {
       var attrs = {};
-      _.each(this.$('form').serializeArray(), function (item) {
-        attrs[item.name] = item.value;
-      });
-      this.model.set(attrs);
-
+      this.$('.delete').removeClass('show');
       this.$('.alert-column input').each(function (i, input) {
         var $input = $(input);
 
         if ($input.val() === '') {
-          $input.parents('.row').slideUp();
+          $input.parents('.row').first().slideUp();
         }
       });
     },

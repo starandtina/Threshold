@@ -462,6 +462,11 @@ i {
   background-color: gray;
 }
 
+.all-day-time-chart {
+  top: 35px;
+  height: 20px;
+}
+
 .time-block {
   position: relative;
   height: 40px;
@@ -490,4 +495,9 @@ i {
 
 .thresholds-timechart .row {
   margin: 0;
+}
+
+
+.confirm-cancel-create-threshold {
+  height: 180px;
 }

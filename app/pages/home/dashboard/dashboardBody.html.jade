@@ -1,68 +1,70 @@
 .container
   .tmpst-full-canvas
-    div
-      h3.label(data-section='create') CREATE THRESHOLD
-      form#threshold-form.form-horizontal(role='form')
-        fieldset
-          .form-group
-            label.col-sm-2.control-label(for='at') AT
-            .col-sm-4
-              select.form-control.time(name='at', id='at')
-                for t in thresholds.timeRange
-                  if t == at
-                    option(selected="selected", value="#{t}")= t
-                  else
-                    option(value="#{t}")= t
-          .form-group
-            label.col-sm-2.control-label(for='until') UTIL
-            .col-sm-4
-               select.form-control.time(name='until', id='until')
-                for t in thresholds.timeRange
-                  if t == until
-                    option(selected="selected", value="#{t}")= t
-                  else
-                    option(value="#{t}")= t
-          .form-group
-            label.col-sm-2.control-label WHEN
-            .col-sm-4
-              select.col-md-4.form-control(name='operator')
-                each val, key in thresholds.operator
-                  if key == operator
-                    option(selected="selected", value="#{key}")= val
-                  else
-                    option(value="#{key}")= val
-          .form-group
-            label.col-sm-2.control-label 
-            .col-sm-2
-              input.form-control(type='text', name='warning')
-            .col-sm-4
-              label.trigger-text-container.trigger-warning-text
-                span.trigger-text trigger a warning
-                i.fa.fa-exclamation-triangle
-          .form-group
-            label.col-sm-2.control-label 
-            .col-sm-2
-              input.form-control(type='text', name='error')
-            .col-sm-4
-              label.trigger-text-container.trigger-error-text
-                span.trigger-text trigger a error
-                i.fa.fa-exclamation-triangle
-          .form-group
-            label.col-sm-2.control-label 
-            .col-sm-2
-              input.form-control(type='text', name='critical')
-            .col-sm-4
-              label.trigger-text-container.trigger-critical-text 
-                span.trigger-text trigger a critical
-                i.fa.fa-exclamation-triangle
-          .form-group
-            .col-sm-offset-2.col-sm-10
-              a.btn.btn-default.create-threshold
-                i.fa.fa-plus CREATE
-          .form-group
-            .validation-error.col-sm-offset-2.col-sm-10
+    h2.label(data-section='create') CREATE THRESHOLD
+    form#threshold-form.form-horizontal(role='form')
+      .form-group
+        label.col-sm-2.control-label(for='at') AT
+        .col-sm-4
+          select.form-control.time(name='at', id='at')
+            each t, index in thresholds.timeRange
+              if t == at
+                option(selected="selected", value="#{t}")= t
+              else if index === 1
+                option(selected="selected", value="#{t}")= t
+              else
+                option(value="#{t}")= t
+      .form-group
+        label.col-sm-2.control-label(for='until') UNTIL
+        .col-sm-4
+           select.form-control.time(name='until', id='until')
+            each t, index in thresholds.timeRange
+              if t == until
+                option(selected="selected", value="#{t}")= t
+              else if index === 1
+                option(selected="selected", value="#{t}")= t
+              else
+                option(value="#{t}")= t
+      .form-group
+        label.col-sm-2.control-label WHEN
+        .col-sm-4
+          select.col-md-4.form-control(name='operator')
+            each val, key in thresholds.operator
+              if key == operator
+                option(selected="selected", value="#{key}")= val
+              else
+                option(value="#{key}")= val
+      .form-group
+        label.col-sm-2.control-label 
+        .col-sm-2
+          input.form-control(type='text', name='warning')
+        .col-sm-4
+          label.trigger-text-container.trigger-warning-text
+            span.trigger-text trigger a warning
+            i.fa.fa-exclamation-triangle
+      .form-group
+        label.col-sm-2.control-label 
+        .col-sm-2
+          input.form-control(type='text', name='error')
+        .col-sm-4
+          label.trigger-text-container.trigger-error-text
+            span.trigger-text trigger a error
+            i.fa.fa-exclamation-triangle
+      .form-group
+        label.col-sm-2.control-label 
+        .col-sm-2
+          input.form-control(type='text', name='critical')
+        .col-sm-4
+          label.trigger-text-container.trigger-critical-text 
+            span.trigger-text trigger a critical
+            i.fa.fa-exclamation-triangle
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          a.btn.btn-default.create-threshold
+            i.fa.fa-plus CREATE
+      .form-group
+        .validation-error.col-sm-offset-2.col-sm-10
 
-    h3.label(data-section='list') MY THRESHOLDS
+    h2.label(data-section='list') MY THRESHOLDS
     #thresholds-container.thresholds-container
       .header-group
         .table-row
@@ -74,15 +76,24 @@
             .cell.col-md-1 #
       .row-group
 
-    h3.label(data-section='chart') MY THRESHOLDS CHARTS
+    h2.label(data-section='chart') MY THRESHOLDS CHARTS
     #thresholds-timechart.thresholds-timechart
       .row
         each t, index in thresholds.timeRange
-          if index % 4 === 0 && index !== 0
+          if index % 4 === 1 && index !== 0 && index !== 1
             .col-md-1.time= t
       .bg-gray
       .timechart-group
 
+
+.hiding.confirm-cancel-create-threshold.modal
+  .modal-header
+    h2.text Confirm Create Threshold
+  .modal-body
+    .confirm-cancel-create-threshold-message
+    div Can't create the other 'all day' threshold
+  .modal-footer
+    button.button.btn.btn-danger.confirm-cancel-create-threshold-leave(data-modal-close) Cancel
         
 div(data-readme='privacy-update', data-readme-show-count='10', data-readme-show-until-closed='data-readme-show-until-closed', data-readme-expires='June 1, 2014', style='visibility: visible; display: none;')
   div

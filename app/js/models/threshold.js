@@ -15,6 +15,7 @@ define([
     },
     api: Tmpst.api,
     url: '/thresholds',
+    /*
     validation: {
       at: {
         required: true
@@ -34,7 +35,7 @@ define([
       critical: {
         pattern: 'number'
       }
-    },
+    },*/
     initialize: function () {
       this.listenTo(this, 'validated', this.handleError);
     },

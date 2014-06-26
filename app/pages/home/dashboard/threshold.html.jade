@@ -1,18 +1,27 @@
 form.row.threshold-form.clearfix(id="form-#{id}")
-  .cell.col-sm-2
-    select#at.form-control(name='at')
-      for t in thresholds.timeRange
-        if t == at
-          option(selected="selected", value="#{t}")= t
-        else
-          option(value="#{t}")= t
-  .cell.col-sm-2
-    select#until.form-control(name='until')
-      for t in thresholds.timeRange
-        if t == until
-          option(selected="selected", value="#{t}")= t
-        else
-          option(value="#{t}")= t
+  if at === 'all day'
+    .cell.col-sm-4
+      select#at.form-control(name='at')
+        for t in thresholds.timeRange
+          if t == at
+            option(selected="selected", value="#{t}")= t
+          else
+            option(value="#{t}")= t
+  else
+    .cell.col-sm-2
+      select#at.form-control(name='at')
+        for t in thresholds.timeRange
+          if t == at
+            option(selected="selected", value="#{t}")= t
+          else
+            option(value="#{t}")= t
+    .cell.col-sm-2
+      select#until.form-control(name='until')
+        for t in thresholds.timeRange
+          if t == until
+            option(selected="selected", value="#{t}")= t
+          else
+            option(value="#{t}")= t
   .cell.col-sm-4
     .row
       .col-sm-6

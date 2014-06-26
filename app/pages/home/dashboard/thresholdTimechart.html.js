@@ -13,7 +13,14 @@ var jade_interp;
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var c = $$obj[$index];
 
-buf.push("<div" + (jade.attr("style", 'margin-left: ' + (c.marginLeftWidth) + ';position:absolute;top: 25px; width:100%;', true, false)) + " class=\"col-md-12\"><div class=\"row\"><div" + (jade.attr("style", 'width: ' + (c.width) + ';', true, false)) + (jade.cls([c.classes], [true])) + "></div></div></div>");
+if ( c.isAllDay)
+{
+buf.push("<div" + (jade.attr("style", ';position:absolute; top: 35px; height: 20px; width: ' + (c.width) + ';', true, false)) + (jade.cls([c.classes], [true])) + "></div>");
+}
+else
+{
+buf.push("<div" + (jade.attr("style", 'margin-left: ' + (c.marginLeftWidth) + ';position:absolute; top: 25px; width: ' + (c.width) + '; z-index: 1;', true, false)) + (jade.cls([c.classes], [true])) + "></div>");
+}
     }
 
   } else {
@@ -21,7 +28,14 @@ buf.push("<div" + (jade.attr("style", 'margin-left: ' + (c.marginLeftWidth) + ';
     for (var $index in $$obj) {
       $$l++;      var c = $$obj[$index];
 
-buf.push("<div" + (jade.attr("style", 'margin-left: ' + (c.marginLeftWidth) + ';position:absolute;top: 25px; width:100%;', true, false)) + " class=\"col-md-12\"><div class=\"row\"><div" + (jade.attr("style", 'width: ' + (c.width) + ';', true, false)) + (jade.cls([c.classes], [true])) + "></div></div></div>");
+if ( c.isAllDay)
+{
+buf.push("<div" + (jade.attr("style", ';position:absolute; top: 35px; height: 20px; width: ' + (c.width) + ';', true, false)) + (jade.cls([c.classes], [true])) + "></div>");
+}
+else
+{
+buf.push("<div" + (jade.attr("style", 'margin-left: ' + (c.marginLeftWidth) + ';position:absolute; top: 25px; width: ' + (c.width) + '; z-index: 1;', true, false)) + (jade.cls([c.classes], [true])) + "></div>");
+}
     }
 
   }

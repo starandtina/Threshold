@@ -23,9 +23,14 @@ define([
       var at = this.model.get('at');
       var until = this.model.get('until');
       var timeRange = this._computeTime(at, until);
+      var hasAllDay = false;
 
       // we need add two charts here
-      if (at > until) {
+      if (at === 'all day') {
+        var metric = this._getMetric(timeRange.at, timeRange.range);
+        metric.isAllDay = true;
+        timeCharts.push(metric);
+      } else if (at > until) {
         var first = _.first(Tmpst.config.thresholds.timeRange);
         var last = _.last(Tmpst.config.thresholds.timeRange);
 
@@ -42,12 +47,20 @@ define([
 
       options = options || {};
       this.$el.html(ThresholdTimechartTpl(_.extend(data, options, {
+        hasAllDay: hasAllDay,
         timeCharts: timeCharts
       })));
 
       return this;
     },
     _computeTime: function (at, until) {
+      if (at === 'all day') {
+        return {
+          at: 0,
+          range: 24
+        };
+      }
+
       var atResult = at.match(/(\d{2})\:(\d{2})/i);
       var untilResult = until.match(/(\d{2})\:(\d{2})/i);
 

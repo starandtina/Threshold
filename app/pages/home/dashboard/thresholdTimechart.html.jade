@@ -1,4 +1,5 @@
 each c in timeCharts
-  .col-md-12(style='margin-left: #{c.marginLeftWidth};position:absolute;top: 25px; width:100%;')
-    .row
-      div(style='width: #{c.width};', class=c.classes)
+  if c.isAllDay
+    div(style=';position:absolute; top: 35px; height: 20px; width: #{c.width};', class=c.classes)
+  else
+    div(style='margin-left: #{c.marginLeftWidth};position:absolute; top: 25px; width: #{c.width}; z-index: 1;', class=c.classes)

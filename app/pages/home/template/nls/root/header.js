@@ -3,7 +3,7 @@ define({
   Home: 'Home',
   Dashboard: 'Dashboard',
   'Create Threshold': 'Create Threshold',
-  'THRESHOLDS': 'THRESHOLDS',
+  Thresholds: 'Thresholds',
   About: 'About',
   Logout: 'Logout'
 });
