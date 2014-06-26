@@ -62,6 +62,7 @@ define([
 
         $row.find('input, select').blur();
         $row.removeClass('edit-row');
+        $row.find('.delete').removeClass('show');
       });
 
       this.$el.addClass('edit-row');

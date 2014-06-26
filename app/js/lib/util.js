@@ -9,7 +9,7 @@ define([
     var $target = $dom.find('[data-section="' + section + '"]');
     if ($target.length) {
       var newTop = $target.position().top;
-      var scrollDiff = Math.abs($(document).scrollTop() - newTop);debugger
+      var scrollDiff = Math.abs($(document).scrollTop() - newTop);
       if (scrollDiff > 1e3) {
         $('html, body').scrollTop(newTop);
       } else {
